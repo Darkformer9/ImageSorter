@@ -12,6 +12,7 @@ const users = [
 
 const inp = document.querySelector(".inp");
 const cardsContainer = document.querySelector(".cards");
+let found=users.name;
 
 // 1. Optimized Function using Map and Join (Fatafat rendering)
 function showUsers(arr) {
@@ -44,12 +45,17 @@ showUsers(users);
 inp.addEventListener("input", (e) => {
     const searchTerm = e.target.value.toLowerCase().trim();
     
-    const filteredUsers = users.filter(user => 
+    const filteredUsers = users.filter(user =>
+         
         user.name.toLowerCase().includes(searchTerm) // startsWith se better includes hota hai
     );
+
+     
+      
+        showUsers(filteredUsers);
+        
     
-    showUsers(filteredUsers);
 });
 
 
-showUsers(user);
+showUsers(users);
